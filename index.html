@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Wedding of Mario & Angela</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body class="lock-scroll">
+    <div class="invite-shell">
+      <audio id="weddingMusic" loop>
+        <source src="assets/music/backsound.mp3" type="audio/mpeg" />
+      </audio>
+
+      <!-- ================= COVER ================= -->
+      <section class="cover" id="cover">
+        <div class="bg-pattern soft"></div>
+
+        <div class="cover-floral-corners" aria-hidden="true">
+          <img src="assets/img/floral-top-left.png" class="cover-floral cover-floral-tl" alt="" />
+          <img src="assets/img/floral-top-right.png" class="cover-floral cover-floral-tr" alt="" />
+          <img src="assets/img/floral-bottom-left.png" class="cover-floral cover-floral-bl" alt="" />
+          <img src="assets/img/floral-bottom-right.png" class="cover-floral cover-floral-br" alt="" />
+        </div>
+
+        <div class="cover-content">
+          <p class="script-small">The Wedding Of</p>
+
+          <div class="cover-photo">
+            <img src="assets/img/gallery-2.png" alt="Mario dan Angela" />
+          </div>
+
+          <h1>MARIO & ANGELA</h1>
+
+          <p class="wedding-date">Minggu, 28 Desember 2026</p>
+
+          <p class="guest-label">Kepada Yth.</p>
+          <p class="guest-parent">Bapak/Ibu/Saudara/i</p>
+
+          <h3 id="guestName">Tamu Undangan</h3>
+
+          <button class="btn btn-primary" id="openInvitation">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            Buka Undangan
+          </button>
+        </div>
+      </section>
+
+      <main id="mainContent">
+        <!-- ================= HOME ================= -->
+        <section class="section home-section" id="home">
+          <div class="bg-pattern soft"></div>
+
+          <div class="scene-layer scene-layer-home" aria-hidden="true">
+            <img src="assets/img/scene/cloud.png" class="scene-cloud cloud-1" alt="" />
+            <img src="assets/img/scene/cloud.png" class="scene-cloud cloud-2" alt="" />
+
+            <img src="assets/img/scene/tree-back.png" class="tree-back" alt="" />
+
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="hero-side-tree side-burgundy-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="hero-side-tree side-burgundy-1-right" alt="" />
+
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="hero-side-tree side-burgundy-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="hero-side-tree side-burgundy-2-right" alt="" />
+
+            <img src="assets/img/scene/tree-side-gold-1.png" class="hero-side-tree side-gold-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="hero-side-tree side-gold-1-right" alt="" />
+
+            <img src="assets/img/scene/tree-side-gold-2.png" class="hero-side-tree side-gold-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="hero-side-tree side-gold-2-right" alt="" />
+
+            <img src="assets/img/scene/banana-tree.png" class="banana-tree banana-left" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="banana-tree banana-right" alt="" />
+
+            <div class="joglo-shadow"></div>
+            <img src="assets/img/scene/hero-joglo.png" class="joglo" alt="Rumah Joglo" />
+
+            <img src="assets/img/scene/flower-bottom-left.png" class="flower-bed flower-bed-left" alt="" />
+            <img src="assets/img/scene/flower-bottom-center.png" class="flower-bed flower-bed-center" alt="" />
+            <img src="assets/img/scene/flower-bottom-right.png" class="flower-bed flower-bed-right" alt="" />
+
+            <div class="flower-accent-layer">
+              <img src="assets/img/scene/flower-1.png" class="flower-accent flower-accent-1" alt="" />
+              <img src="assets/img/scene/flower-2.png" class="flower-accent flower-accent-2" alt="" />
+              <img src="assets/img/scene/flower-3.png" class="flower-accent flower-accent-3" alt="" />
+              <img src="assets/img/scene/flower-4.png" class="flower-accent flower-accent-4" alt="" />
+              <img src="assets/img/scene/flower-5.png" class="flower-accent flower-accent-5" alt="" />
+            </div>
+
+            <img src="assets/img/scene/butterfly-1.png" class="butterfly butterfly-1" alt="" />
+            <img src="assets/img/scene/butterfly-2.png" class="butterfly butterfly-2" alt="" />
+            <img src="assets/img/scene/butterfly-3.png" class="butterfly butterfly-3" alt="" />
+          </div>
+
+          <div class="hero-title">
+            <p class="script-small reveal">The Wedding Of</p>
+
+            <h1 class="hero-couple reveal delay-1">
+              MARIO
+              <span>&</span>
+              ANGELA
+            </h1>
+
+            <p class="hero-date reveal delay-2">Minggu, 28 Desember 2026</p>
+
+            <div class="scroll-icon reveal delay-3">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= PHOTO ================= -->
+        <section class="section photo-section decor-section" id="photo">
+          <div class="bg-pattern soft"></div>
+          <div class="section-scene-bg static-scene-bg" aria-hidden="true">
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-1" alt="" />
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-2" alt="" />
+            <img src="assets/img/scene/tree-back.png" class="section-tree-back" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-right" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-left" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-right" alt="" />
+            <img src="assets/img/scene/flower-bottom-left.png" class="section-flower section-flower-left" alt="" />
+            <img src="assets/img/scene/flower-bottom-center.png" class="section-flower section-flower-center" alt="" />
+            <img src="assets/img/scene/flower-bottom-right.png" class="section-flower section-flower-right" alt="" />
+            <img src="assets/img/scene/hero-joglo.png" class="section-joglo-bg" alt="" />
+          </div>
+
+          <div class="photo-card reveal">
+            <div class="arched-image">
+              <img src="assets/img/photo.png" alt="Mario dan Angela" />
+            </div>
+
+            <div class="monogram-block">
+              <p class="photo-label">The Wedding Of</p>
+              <h2>Mario & Angela</h2>
+              <div class="mini-divider">❦</div>
+              <p class="photo-date">Minggu, 28 Desember 2026</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= QUOTE ================= -->
+        <section class="section quote-section decor-section" id="quote">
+          <div class="bg-pattern soft"></div>
+          <div class="section-scene-bg static-scene-bg" aria-hidden="true">
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-1" alt="" />
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-2" alt="" />
+            <img src="assets/img/scene/tree-back.png" class="section-tree-back" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-right" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-left" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-right" alt="" />
+            <img src="assets/img/scene/flower-bottom-left.png" class="section-flower section-flower-left" alt="" />
+            <img src="assets/img/scene/flower-bottom-center.png" class="section-flower section-flower-center" alt="" />
+            <img src="assets/img/scene/flower-bottom-right.png" class="section-flower section-flower-right" alt="" />
+            <img src="assets/img/scene/hero-joglo.png" class="section-joglo-bg" alt="" />
+          </div>
+
+          <div class="container narrow">
+            <p class="quote-top reveal">“Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri.”</p>
+            <p class="ayat reveal delay-1">QS. Ar-Rum : 21</p>
+
+            <div class="arch-card reveal delay-2">
+              <p class="script-small">Assalamu’alaikum</p>
+              <p class="salam">Maha suci Allah SWT yang telah menciptakan makhluk-Nya berpasang-pasangan.</p>
+              <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= MEMPELAI PRIA ================= -->
+        <section class="section profile-section groom-profile decor-section">
+          <div class="bg-pattern rose"></div>
+          <div class="section-scene-bg static-scene-bg" aria-hidden="true">
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-1" alt="" />
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-2" alt="" />
+            <img src="assets/img/scene/tree-back.png" class="section-tree-back" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-right" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-left" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-right" alt="" />
+            <img src="assets/img/scene/flower-bottom-left.png" class="section-flower section-flower-left" alt="" />
+            <img src="assets/img/scene/flower-bottom-center.png" class="section-flower section-flower-center" alt="" />
+            <img src="assets/img/scene/flower-bottom-right.png" class="section-flower section-flower-right" alt="" />
+            <img src="assets/img/scene/hero-joglo.png" class="section-joglo-bg" alt="" />
+          </div>
+
+          <div class="profile-card reveal">
+            <div class="profile-photo oval-bottom">
+              <img src="assets/img/mempelai-pria.png" alt="Mario Fajar Indra Subagja" />
+            </div>
+
+            <div class="profile-text groom-text">
+              <p class="profile-label">The Groom</p>
+              <h2>Mario Fajar Indra Subagja</h2>
+              <p>
+                Putra dari Bapak Dedi Bagja<br />
+                & Ibu Euis Sapaan
+              </p>
+              <a href="https://www.instagram.com/mariooo20__?igsh=MXBuZHV3NXF1YXk0dA==" target="_blank" rel="noopener noreferrer" class="btn btn-mini">
+                <i class="fa-brands fa-instagram"></i>
+                @mariooo20_
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= MEMPELAI PUTRI ================= -->
+        <section class="section profile-section bride-profile decor-section" id="mempelai">
+          <div class="bg-pattern rose"></div>
+          <div class="section-scene-bg static-scene-bg" aria-hidden="true">
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-1" alt="" />
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-2" alt="" />
+            <img src="assets/img/scene/tree-back.png" class="section-tree-back" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-right" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-left" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-right" alt="" />
+            <img src="assets/img/scene/flower-bottom-left.png" class="section-flower section-flower-left" alt="" />
+            <img src="assets/img/scene/flower-bottom-center.png" class="section-flower section-flower-center" alt="" />
+            <img src="assets/img/scene/flower-bottom-right.png" class="section-flower section-flower-right" alt="" />
+            <img src="assets/img/scene/hero-joglo.png" class="section-joglo-bg" alt="" />
+          </div>
+
+          <div class="profile-card reveal">
+            <div class="profile-text">
+              <p class="profile-label">The Bride</p>
+              <h2>Angela Putri Karamoy</h2>
+              <p>
+                Putri dari Asan<br />
+                & Ibu Eti Sulastri
+              </p>
+              <a href="https://www.instagram.com/limangelaa_?igsh=dDVncmxseWNham01" target="_blank" rel="noopener noreferrer" class="btn btn-mini">
+                <i class="fa-brands fa-instagram"></i>
+                @limangelaa_
+              </a>
+            </div>
+            <br />
+            <div class="profile-photo oval-top">
+              <img src="assets/img/mempelai-wanita.png" alt="Angela Putri Karamoy" />
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= SAVE DATE ================= -->
+        <section class="section save-section" id="tanggal">
+          <img src="assets/img/gallery-1.png" class="save-bg" alt="Save The Date" />
+          <div class="save-overlay"></div>
+
+          <div class="save-content reveal">
+            <p class="script-save">Save The Date</p>
+
+            <div class="countdown">
+              <div>
+                <span id="days">00</span>
+                <small>Hari</small>
+              </div>
+
+              <div>
+                <span id="hours">00</span>
+                <small>Jam</small>
+              </div>
+
+              <div>
+                <span id="minutes">00</span>
+                <small>Menit</small>
+              </div>
+
+              <div>
+                <span id="seconds">00</span>
+                <small>Detik</small>
+              </div>
+            </div>
+
+            <a href="#" class="btn btn-calendar" id="calendarBtn">
+              <i class="fa-regular fa-calendar-plus"></i>
+              Save to Calendar
+            </a>
+          </div>
+        </section>
+
+        <!-- ================= ACARA ================= -->
+        <section class="section event-section decor-section" id="acara">
+          <div class="bg-pattern soft"></div>
+          <div class="section-scene-bg static-scene-bg" aria-hidden="true">
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-1" alt="" />
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-2" alt="" />
+            <img src="assets/img/scene/tree-back.png" class="section-tree-back" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-right" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-left" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-right" alt="" />
+            <img src="assets/img/scene/flower-bottom-left.png" class="section-flower section-flower-left" alt="" />
+            <img src="assets/img/scene/flower-bottom-center.png" class="section-flower section-flower-center" alt="" />
+            <img src="assets/img/scene/flower-bottom-right.png" class="section-flower section-flower-right" alt="" />
+            <img src="assets/img/scene/hero-joglo.png" class="section-joglo-bg" alt="" />
+          </div>
+
+          <div class="event-wrap">
+            <div class="event-card reveal">
+              <p>Resepsi</p>
+              <h2>
+                Minggu<br />
+                <span>28</span><br />
+                Desember 2026
+              </h2>
+              <small>
+                Pukul 09.00 WIB s.d Selesai<br />
+                Rumah Mempelai Pria<br />
+                Desa. Sumbakeling dusun satu ajigulunh rt02 rw02, Kec. Pancalang, Kab. kuningan, Jawa Barat
+              </small>
+              <a href="https://maps.app.goo.gl/LkXm1Q2v8XcGjSei7" target="_blank" class="btn btn-map">
+                <i class="fa-solid fa-location-dot"></i>
+                Buka Maps
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= GIFT ================= -->
+        <section class="section gift-section decor-section" id="gift">
+          <div class="bg-pattern soft"></div>
+          <div class="section-scene-bg static-scene-bg" aria-hidden="true">
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-1" alt="" />
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-2" alt="" />
+            <img src="assets/img/scene/tree-back.png" class="section-tree-back" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-right" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-left" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-right" alt="" />
+            <img src="assets/img/scene/flower-bottom-left.png" class="section-flower section-flower-left" alt="" />
+            <img src="assets/img/scene/flower-bottom-center.png" class="section-flower section-flower-center" alt="" />
+            <img src="assets/img/scene/flower-bottom-right.png" class="section-flower section-flower-right" alt="" />
+            <img src="assets/img/scene/hero-joglo.png" class="section-joglo-bg" alt="" />
+          </div>
+
+          <div class="container narrow">
+            <p class="script-small reveal">Wedding Gift</p>
+            <p class="gift-intro reveal delay-1">Doa restu Bapak/Ibu/Saudara/i merupakan hadiah terindah bagi kami. Namun apabila ingin memberikan tanda kasih, dapat melalui rekening berikut:</p>
+
+            <div class="bank-card reveal delay-2">
+              <span>Bank BCA</span>
+              <h3>2992095556</h3>
+              <p>a.n. Angela Putri Karamoy</p>
+              <button class="btn btn-copy" data-copy="1234567890">
+                <i class="fa-regular fa-copy"></i>
+                Salin Rekening
+              </button>
+            </div>
+
+            <div class="bank-card reveal delay-3">
+              <span>Bank BCA</span>
+              <h3>7300069643</h3>
+              <p>a.n. Dedi Bagja</p>
+              <button class="btn btn-copy" data-copy="0987654321">
+                <i class="fa-regular fa-copy"></i>
+                Salin Rekening
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= GALERI ================= -->
+        <section class="section gallery-section decor-section" id="galeri">
+          <div class="bg-pattern soft"></div>
+          <div class="section-scene-bg static-scene-bg" aria-hidden="true">
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-1" alt="" />
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-2" alt="" />
+            <img src="assets/img/scene/tree-back.png" class="section-tree-back" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-right" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-left" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-right" alt="" />
+            <img src="assets/img/scene/flower-bottom-left.png" class="section-flower section-flower-left" alt="" />
+            <img src="assets/img/scene/flower-bottom-center.png" class="section-flower section-flower-center" alt="" />
+            <img src="assets/img/scene/flower-bottom-right.png" class="section-flower section-flower-right" alt="" />
+            <img src="assets/img/scene/hero-joglo.png" class="section-joglo-bg" alt="" />
+          </div>
+
+          <div class="container">
+            <p class="script-small reveal">Our Gallery</p>
+
+            <div class="gallery-grid aesthetic-gallery">
+              <div class="gallery-item gallery-tall reveal">
+                <img src="assets/img/gallery-1.png" alt="" />
+              </div>
+
+              <div class="gallery-item gallery-short reveal delay-1">
+                <img src="assets/img/gallery-2.png" alt="" />
+              </div>
+
+              <div class="gallery-item gallery-blob reveal delay-2">
+                <img src="assets/img/gallery-3.png" alt="" />
+              </div>
+
+              <div class="gallery-item gallery-tall reveal delay-3">
+                <img src="assets/img/gallery-4.png" alt="" />
+              </div>
+
+              <div class="gallery-item gallery-short reveal delay-4">
+                <img src="assets/img/gallery-5.png" alt="" />
+              </div>
+
+              <div class="gallery-item gallery-blob reveal delay-5">
+                <img src="assets/img/gallery-6.png" alt="" />
+              </div>
+
+              <div class="gallery-item gallery-tall reveal">
+                <img src="assets/img/gallery-7.png" alt="" />
+              </div>
+
+              <div class="gallery-item gallery-short reveal delay-1">
+                <img src="assets/img/gallery-8.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= UCAPAN ================= -->
+        <section class="section wish-section decor-section" id="ucapan">
+          <div class="bg-pattern soft"></div>
+          <div class="section-scene-bg static-scene-bg" aria-hidden="true">
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-1" alt="" />
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-2" alt="" />
+            <img src="assets/img/scene/tree-back.png" class="section-tree-back" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-right" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-left" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-right" alt="" />
+            <img src="assets/img/scene/flower-bottom-left.png" class="section-flower section-flower-left" alt="" />
+            <img src="assets/img/scene/flower-bottom-center.png" class="section-flower section-flower-center" alt="" />
+            <img src="assets/img/scene/flower-bottom-right.png" class="section-flower section-flower-right" alt="" />
+            <img src="assets/img/scene/hero-joglo.png" class="section-joglo-bg" alt="" />
+          </div>
+
+          <div class="container narrow">
+            <div class="wish-box reveal">
+              <p class="script-small">Ucapan & Doa</p>
+              <p>Berikan doa terbaik untuk kami agar selalu diberkahi dalam menjalani rumah tangga.</p>
+
+              <form class="wish-form" id="wishForm">
+                <input type="text" id="wishName" placeholder="Nama kamu" required />
+                <textarea id="wishMessage" placeholder="Tulis ucapan dan doa..." required></textarea>
+
+                <button type="submit" class="btn btn-primary">Kirim Ucapan</button>
+              </form>
+
+              <div class="wish-list" id="wishList"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= CLOSING ================= -->
+        <section class="section closing-section decor-section" id="closing">
+          <div class="bg-pattern soft"></div>
+          <div class="section-scene-bg static-scene-bg" aria-hidden="true">
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-1" alt="" />
+            <img src="assets/img/scene/cloud.png" class="section-cloud section-cloud-2" alt="" />
+            <img src="assets/img/scene/tree-back.png" class="section-tree-back" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-1.png" class="section-side section-burgundy-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-burgundy-2.png" class="section-side section-burgundy-2-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-1.png" class="section-side section-gold-1-right" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-left" alt="" />
+            <img src="assets/img/scene/tree-side-gold-2.png" class="section-side section-gold-2-right" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-left" alt="" />
+            <img src="assets/img/scene/banana-tree.png" class="section-banana section-banana-right" alt="" />
+            <img src="assets/img/scene/flower-bottom-left.png" class="section-flower section-flower-left" alt="" />
+            <img src="assets/img/scene/flower-bottom-center.png" class="section-flower section-flower-center" alt="" />
+            <img src="assets/img/scene/flower-bottom-right.png" class="section-flower section-flower-right" alt="" />
+            <img src="assets/img/scene/hero-joglo.png" class="section-joglo-bg" alt="" />
+          </div>
+
+          <div class="container narrow">
+            <p class="script-small reveal">Thank You</p>
+            <h2 class="closing-name reveal delay-1">Mario & Angela</h2>
+            <p class="closing-text reveal delay-2">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+          </div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav" id="bottomNav">
+        <a href="#home" class="nav-link active">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+
+        <a href="#mempelai" class="nav-link">
+          <i class="fa-solid fa-heart"></i>
+          <span>Mempelai</span>
+        </a>
+
+        <a href="#tanggal" class="nav-link">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span>Tanggal</span>
+        </a>
+
+        <a href="#acara" class="nav-link">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Acara</span>
+        </a>
+
+        <a href="#gift" class="nav-link">
+          <i class="fa-solid fa-gift"></i>
+          <span>Gift</span>
+        </a>
+
+        <a href="#ucapan" class="nav-link">
+          <i class="fa-regular fa-comment-dots"></i>
+          <span>Ucapan</span>
+        </a>
+      </nav>
+
+      <button class="music-btn" id="musicBtn" aria-label="Music Button">
+        <i class="fa-solid fa-music"></i>
+      </button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

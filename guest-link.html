@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generator Link Tamu</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #fff8ef;
+        color: #3a1f1f;
+        padding: 20px;
+      }
+
+      .box {
+        max-width: 520px;
+        margin: auto;
+        background: white;
+        padding: 24px;
+        border-radius: 22px;
+        box-shadow: 0 10px 25px rgba(76, 16, 34, 0.12);
+        border: 1px solid rgba(212, 175, 55, 0.45);
+      }
+
+      h1 {
+        color: #6e1e32;
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      input,
+      textarea,
+      button {
+        width: 100%;
+        margin-top: 12px;
+        padding: 12px;
+        border-radius: 14px;
+        border: 1px solid #d4af37;
+        font-size: 14px;
+      }
+
+      textarea {
+        min-height: 160px;
+      }
+
+      button {
+        background: #6e1e32;
+        color: white;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .result {
+        margin-top: 20px;
+        font-size: 14px;
+        word-break: break-word;
+      }
+
+      .link-item {
+        background: #fff8ef;
+        padding: 14px;
+        border-radius: 14px;
+        border: 1px solid rgba(212, 175, 55, 0.5);
+        margin-bottom: 12px;
+      }
+
+      a {
+        color: #6e1e32;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Generator Link Tamu</h1>
+      <p>Masukkan link utama undangan dan daftar nama tamu. Satu baris untuk satu tamu.</p>
+
+      <input type="text" id="baseLink" placeholder="Contoh: https://domain.com/index.html" />
+
+      <textarea
+        id="guestNames"
+        placeholder="Pak Andi
+Bu Siti
+Keluarga Bapak Rahmat"
+      ></textarea>
+
+      <button onclick="generateLinks()">Buat Link</button>
+
+      <div id="result" class="result"></div>
+    </div>
+
+    <script>
+      function generateLinks() {
+        const baseLink = document.getElementById("baseLink").value.trim();
+        const guestNames = document.getElementById("guestNames").value.trim();
+        const result = document.getElementById("result");
+
+        if (!baseLink || !guestNames) {
+          alert("Isi link utama dan nama tamu dulu.");
+          return;
+        }
+
+        const names = guestNames.split("\n").filter((name) => name.trim() !== "");
+        result.innerHTML = "";
+
+        names.forEach((name) => {
+          const encodedName = encodeURIComponent(name.trim());
+          const separator = baseLink.includes("?") ? "&" : "?";
+          const finalLink = `${baseLink}${separator}to=${encodedName}`;
+
+          const item = document.createElement("div");
+          item.className = "link-item";
+          item.innerHTML = `
+        <strong>${name}</strong><br>
+        <a href="${finalLink}" target="_blank">${finalLink}</a><br>
+        <button onclick="copyText('${finalLink}')">Salin Link</button>
+      `;
+
+          result.appendChild(item);
+        });
+      }
+
+      function copyText(text) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Link berhasil disalin.");
+        });
+      }
+    </script>
+  </body>
+</html>
