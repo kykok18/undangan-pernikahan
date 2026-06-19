@@ -293,6 +293,72 @@ copyButtons.forEach((button) => {
 });
 
 // =========================
+// LIGHT GALLERY CAROUSEL
+// =========================
+
+const galleryTrack = document.getElementById("galleryTrack");
+const galleryPrev = document.querySelector(".gallery-prev");
+const galleryNext = document.querySelector(".gallery-next");
+const galleryDots = document.getElementById("galleryDots");
+
+if (galleryTrack && galleryDots) {
+  const slides = Array.from(galleryTrack.querySelectorAll(".gallery-slide"));
+
+  slides.forEach((_, index) => {
+    const dot = document.createElement("span");
+    dot.className = "gallery-dot";
+    if (index === 0) dot.classList.add("active");
+
+    dot.addEventListener("click", () => {
+      galleryTrack.scrollTo({
+        left: galleryTrack.clientWidth * index,
+        behavior: "smooth",
+      });
+    });
+
+    galleryDots.appendChild(dot);
+  });
+
+  const dots = Array.from(galleryDots.querySelectorAll(".gallery-dot"));
+
+  function updateGalleryDot() {
+    const index = Math.round(galleryTrack.scrollLeft / galleryTrack.clientWidth);
+
+    dots.forEach((dot) => dot.classList.remove("active"));
+
+    if (dots[index]) {
+      dots[index].classList.add("active");
+    }
+  }
+
+  galleryTrack.addEventListener(
+    "scroll",
+    () => {
+      window.requestAnimationFrame(updateGalleryDot);
+    },
+    { passive: true },
+  );
+
+  if (galleryPrev) {
+    galleryPrev.addEventListener("click", () => {
+      galleryTrack.scrollBy({
+        left: -galleryTrack.clientWidth,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  if (galleryNext) {
+    galleryNext.addEventListener("click", () => {
+      galleryTrack.scrollBy({
+        left: galleryTrack.clientWidth,
+        behavior: "smooth",
+      });
+    });
+  }
+}
+
+// =========================
 // WISH FORM GOOGLE SHEET
 // =========================
 
@@ -430,65 +496,6 @@ if (wishForm && wishList) {
 // DECOR PARALLAX RINGAN
 // =========================
 
-(function () {
-  const home = document.querySelector(".home-section");
-  if (!home) return;
-
-  const clouds = document.querySelectorAll(".home-section .scene-cloud");
-  const sideTrees = document.querySelectorAll(".home-section .hero-side-tree");
-  const bananas = document.querySelectorAll(".home-section .banana-tree");
-  const flowers = document.querySelectorAll(".home-section .flower-bed");
-  const accents = document.querySelectorAll(".home-section .flower-accent");
-
-  let parallaxTicking = false;
-
-  function updateDecorParallax() {
-    const rect = home.getBoundingClientRect();
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    const progress = Math.max(-1, Math.min(1, (vh * 0.5 - rect.top) / vh));
-
-    clouds.forEach((el, index) => {
-      const move = progress * (index % 2 === 0 ? 12 : -12);
-      el.style.setProperty("--scroll-y", `${move}px`);
-    });
-
-    sideTrees.forEach((el, index) => {
-      const move = progress * (index % 2 === 0 ? 8 : -8);
-      el.style.setProperty("--scroll-y", `${move}px`);
-    });
-
-    bananas.forEach((el, index) => {
-      const move = progress * (index % 2 === 0 ? -7 : -5);
-      el.style.setProperty("--scroll-y", `${move}px`);
-    });
-
-    flowers.forEach((el, index) => {
-      const move = progress * (index === 1 ? -8 : -5);
-      el.style.setProperty("--scroll-y", `${move}px`);
-    });
-
-    accents.forEach((el, index) => {
-      const move = progress * (index % 2 === 0 ? -7 : -4);
-      el.style.setProperty("--scroll-y", `${move}px`);
-    });
-
-    parallaxTicking = false;
-  }
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (!parallaxTicking) {
-        window.requestAnimationFrame(updateDecorParallax);
-        parallaxTicking = true;
-      }
-    },
-    { passive: true },
-  );
-
-  updateDecorParallax();
-})();
-
 // =========================
 // ESCAPE HTML
 // =========================
@@ -498,45 +505,22 @@ function escapeHTML(text) {
 }
 
 // =========================
-// IMAGE OPTIMIZATION
+// IMAGE OPTIMIZATION - LIGHT VERSION
 // =========================
 
 document.querySelectorAll("img").forEach((img) => {
   img.decoding = "async";
-
-  const importantImages = [
-    "bg-cover.jpg",
-    "hero-joglo.png",
-    "tree-back.png",
-    "tree-side-burgundy-1.png",
-    "tree-side-burgundy-2.png",
-    "tree-side-gold-1.png",
-    "tree-side-gold-2.png",
-    "banana-tree.png",
-    "flower-bottom-left.png",
-    "flower-bottom-center.png",
-    "flower-bottom-right.png",
-    "flower-1.png",
-    "flower-2.png",
-    "flower-3.png",
-    "flower-4.png",
-    "flower-5.png",
-    "floral-top-left.png",
-    "floral-top-right.png",
-    "floral-bottom-left.png",
-    "floral-bottom-right.png",
-  ];
-
-  const src = img.getAttribute("src") || "";
-  const isImportant = importantImages.some((name) => src.includes(name));
-
-  if (!isImportant) {
-    img.loading = "lazy";
-  } else {
-    img.loading = "eager";
-  }
-
   img.setAttribute("draggable", "false");
+
+  const isAboveFold = img.closest(".cover") || img.closest(".home-section");
+
+  if (isAboveFold) {
+    img.loading = "eager";
+    img.fetchPriority = "high";
+  } else {
+    img.loading = "lazy";
+    img.fetchPriority = "low";
+  }
 });
 
 // =========================

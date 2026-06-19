@@ -74,6 +74,8 @@ img {
 #mainContent {
   display: block;
   width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -108,6 +110,10 @@ img {
 
 .section {
   position: relative;
+  width: 100%;
+  max-width: 430px;
+  margin-left: auto;
+  margin-right: auto;
   min-height: 100vh;
   min-height: 100dvh;
   overflow: hidden;
@@ -128,7 +134,7 @@ img {
 }
 
 .container.narrow {
-  width: min(100%, 350px);
+  width: min(92%, 360px);
 }
 
 .script-small {
@@ -895,15 +901,85 @@ body.invitation-opened .home-section .hero-title {
 }
 
 .section-scene-bg::before,
-.section-scene-bg::after,
-.decor-section::before,
-.decor-section::after {
+.section-scene-bg::after {
   display: none !important;
 }
 
 .decor-section > *:not(.section-scene-bg):not(.bg-pattern) {
   position: relative;
   z-index: 5;
+}
+
+/* =========================
+   DECOR SECTION BACKGROUND
+   Ringan, tidak melebar keluar undangan
+   ========================= */
+.decor-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(181, 139, 75, 0.13), transparent 34%),
+    radial-gradient(circle at 10% 80%, rgba(125, 23, 52, 0.08), transparent 32%),
+    radial-gradient(circle at 90% 76%, rgba(125, 23, 52, 0.08), transparent 32%),
+    url("../img/floral-top-left.png") left -38px top -30px / 140px auto no-repeat,
+    url("../img/floral-top-right.png") right -38px top -30px / 140px auto no-repeat,
+    url("../img/floral-bottom-left.png") left -42px bottom -34px / 165px auto no-repeat,
+    url("../img/floral-bottom-right.png") right -42px bottom -34px / 165px auto no-repeat;
+  opacity: 0.72;
+}
+
+.decor-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 82%;
+  height: 64%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  border: 1px solid rgba(181, 139, 75, 0.13);
+  border-radius: 999px 999px 42px 42px;
+  background: linear-gradient(180deg, rgba(255, 253, 248, 0.16), rgba(255, 253, 248, 0.03));
+  opacity: 0.72;
+}
+
+.decor-section > *:not(.section-scene-bg):not(.bg-pattern) {
+  z-index: 6;
+}
+
+.decor-section .section-cloud,
+.decor-section .section-tree-back,
+.decor-section .section-side,
+.decor-section .section-banana {
+  display: none;
+}
+
+.decor-section .section-joglo-bg {
+  display: block;
+  width: 112%;
+  left: 50%;
+  bottom: 3%;
+  opacity: 0.075;
+  filter: none;
+}
+
+.decor-section .section-flower-left,
+.decor-section .section-flower-right {
+  display: block;
+  width: 175px;
+  opacity: 0.23;
+  filter: none;
+}
+
+.decor-section .section-flower-center {
+  display: block;
+  width: 245px;
+  opacity: 0.16;
+  filter: none;
 }
 
 /* PHOTO SECTION */
@@ -1244,72 +1320,173 @@ body.invitation-opened .home-section .hero-title {
   color: #6b514d;
 }
 
-/* GALLERY */
+/* =========================
+   GALLERY CAROUSEL
+   RINGAN + PREMIUM
+   ========================= */
+
+.gallery-section {
+  padding-top: 72px;
+  padding-bottom: 120px;
+}
+
+.gallery-container {
+  width: min(100%, 390px);
+}
+
 .gallery-section .script-small {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
-.aesthetic-gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  align-items: start;
-}
-
-.gallery-item {
+.gallery-carousel {
   position: relative;
-  overflow: hidden;
-  background: #d8c5b6;
-  box-shadow: 0 14px 28px rgba(70, 20, 30, 0.15);
+  width: 100%;
+  padding: 0 6px;
 }
 
-.gallery-item img {
+.gallery-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 2px 14px;
+}
+
+.gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #eadcc7;
+  box-shadow: 0 14px 30px rgba(70, 20, 30, 0.16);
+  contain: layout paint style;
+  content-visibility: auto;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  image-rendering: auto;
+  backface-visibility: hidden;
+}
+
+/* Kalau masih ada wajah atau badan yang kepotong,
+   ganti object-fit cover di atas menjadi contain. */
+.gallery-slide.contain img {
+  object-fit: contain;
+  background: #eadcc7;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 8;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: rgba(125, 23, 52, 0.92);
+  color: #fff8ed;
+  box-shadow: 0 10px 22px rgba(70, 20, 30, 0.2);
+}
+
+.gallery-prev {
+  left: -2px;
+}
+
+.gallery-next {
+  right: -2px;
+}
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.gallery-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(125, 23, 52, 0.28);
+  transition: 0.25s ease;
+}
+
+.gallery-dot.active {
+  width: 20px;
+  background: var(--burgundy);
+}
+
+/* Fallback jika HTML galeri lama masih memakai .gallery-grid */
+.gallery-grid.aesthetic-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery-grid .gallery-item {
+  aspect-ratio: 3 / 4;
+  height: auto !important;
+  border-radius: 22px !important;
+  overflow: hidden;
+  background: #eadcc7;
+  box-shadow: 0 10px 20px rgba(70, 20, 30, 0.12);
+  transform: none !important;
+}
+
+.gallery-grid .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  display: block;
+  object-position: center center;
+  image-rendering: auto;
 }
 
-/* Semua portrait, tidak ada landscape */
-.gallery-tall {
-  height: 245px;
-  border-radius: 34px 20px 58px 18px;
+@media (max-width: 480px) {
+  .gallery-container {
+    width: min(100%, 360px);
+  }
+
+  .gallery-slide {
+    border-radius: 24px;
+  }
+
+  .gallery-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .gallery-prev {
+    left: 2px;
+  }
+
+  .gallery-next {
+    right: 2px;
+  }
 }
 
-.gallery-short {
-  height: 185px;
-  border-radius: 24px 46px 20px 38px;
-}
+@media (max-width: 360px) {
+  .gallery-container {
+    width: min(100%, 330px);
+  }
 
-.gallery-blob {
-  height: 220px;
-  border-radius: 54px 18px 36px 62px;
-}
-
-/* variasi posisi biar abstrak */
-.gallery-item:nth-child(2) {
-  transform: translateY(28px);
-}
-
-.gallery-item:nth-child(3) {
-  transform: translateY(-4px);
-}
-
-.gallery-item:nth-child(4) {
-  transform: translateY(22px);
-}
-
-.gallery-item:nth-child(5) {
-  transform: translateY(-10px);
-}
-
-.gallery-item:nth-child(6) {
-  transform: translateY(16px);
-}
-
-.gallery-item:nth-child(8) {
-  transform: translateY(-6px);
+  .gallery-slide {
+    border-radius: 22px;
+  }
 }
 
 /* WISH */
@@ -1387,6 +1564,29 @@ body.invitation-opened .home-section .hero-title {
 .closing-text {
   font-size: 13px;
   line-height: 1.8;
+}
+
+.wish-section,
+.closing-section {
+  padding-top: 76px;
+  padding-bottom: 128px;
+}
+
+.wish-box {
+  width: 100%;
+}
+
+.closing-section .container.narrow {
+  width: min(92%, 360px);
+}
+
+.cover-photo img,
+.arched-image img,
+.profile-photo img,
+.gallery-slide img,
+.gallery-grid .gallery-item img,
+.save-bg {
+  image-rendering: auto;
 }
 
 /* NAV + MUSIC */
@@ -2220,5 +2420,101 @@ body.invitation-opened .home-section .hero-title {
 
   .flower-bed-center {
     width: 270px;
+  }
+}
+
+/* =========================
+   MOBILE PERFORMANCE FINAL
+   Home tetap full animasi, section bawah tetap ringan
+   ========================= */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .invite-shell,
+  #mainContent,
+  #mainContent .section {
+    width: 100%;
+    max-width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .decor-section::before {
+    background:
+      radial-gradient(circle at 50% 18%, rgba(181, 139, 75, 0.14), transparent 34%),
+      radial-gradient(circle at 10% 80%, rgba(125, 23, 52, 0.09), transparent 32%),
+      radial-gradient(circle at 90% 76%, rgba(125, 23, 52, 0.09), transparent 32%),
+      url("../img/floral-top-left.png") left -36px top -28px / 128px auto no-repeat,
+      url("../img/floral-top-right.png") right -36px top -28px / 128px auto no-repeat,
+      url("../img/floral-bottom-left.png") left -42px bottom -32px / 150px auto no-repeat,
+      url("../img/floral-bottom-right.png") right -42px bottom -32px / 150px auto no-repeat;
+    opacity: 0.78;
+  }
+
+  .decor-section::after {
+    width: 84%;
+    height: 62%;
+    opacity: 0.58;
+  }
+
+  .decor-section .section-cloud,
+  .decor-section .section-tree-back,
+  .decor-section .section-side,
+  .decor-section .section-banana {
+    display: none !important;
+  }
+
+  .decor-section .section-joglo-bg {
+    display: block !important;
+    width: 112% !important;
+    opacity: 0.07 !important;
+    filter: none !important;
+  }
+
+  .decor-section .section-flower-left,
+  .decor-section .section-flower-right {
+    display: block !important;
+    width: 155px !important;
+    opacity: 0.21 !important;
+    filter: none !important;
+  }
+
+  .decor-section .section-flower-center {
+    display: block !important;
+    width: 225px !important;
+    opacity: 0.16 !important;
+    filter: none !important;
+  }
+
+  .arch-card,
+  .profile-card,
+  .event-card,
+  .bank-card,
+  .wish-box,
+  .countdown div {
+    backdrop-filter: none !important;
+  }
+
+  .photo-card,
+  .profile-card,
+  .event-card,
+  .bank-card,
+  .wish-box {
+    box-shadow: 0 14px 28px rgba(74, 22, 32, 0.14) !important;
+  }
+
+  .reveal {
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s ease !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .decor-section * {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
   }
 }
